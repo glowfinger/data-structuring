@@ -3,6 +3,7 @@ CREATE TABLE data (
     email VARCHAR(100) NOT NULL UNIQUE,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
+    type VARCHAR(100) NOT NULL,
     dob DATE NOT NULL,
     status VARCHAR(100) NOT NULL,
     region VARCHAR(100) NOT NULL,
@@ -12,8 +13,6 @@ CREATE TABLE data (
     facebook VARCHAR(100),
     snapchat VARCHAR(100)
 );
-
-
 
 
 CREATE TABLE user_bio (
