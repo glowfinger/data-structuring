@@ -14,7 +14,6 @@ CREATE TABLE data (
     snapchat VARCHAR(100)
 );
 
-
 CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -52,17 +51,20 @@ ON user (email);
 CREATE INDEX idx_user_type
 ON user (type);
 
+CREATE INDEX idx_user_status
+ON user (status);
+
 CREATE INDEX idx_user_status_type
 ON user (status, type);
 
 CREATE INDEX idx_user_dob_dob
 ON user_dob (dob);
 
-CREATE INDEX idx_bio_region
-ON user_bio (region);
-
 CREATE INDEX idx_user_contact_method
 ON user_contact (method);
+
+CREATE INDEX idx_bio_region
+ON user_bio (region);
 
 INSERT INTO user (id, email, status, type)
 SELECT id, email, status, type 
